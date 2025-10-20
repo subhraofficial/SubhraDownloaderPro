@@ -4,48 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subhra Downloader Pro</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="light">
-    <header>
-        <h1 class="logo">🎬 Subhra Downloader Pro</h1>
-        <button id="theme-toggle">🌙</button>
-    </header>
-
-    <main>
-        <div class="input-section">
-            <input type="text" id="url-input" placeholder="Paste YouTube URL here">
-            <button id="folder-btn">Select Folder</button>
-            <span id="folder-path">Default Downloads Folder</span>
-        </div>
-
-        <div class="options">
-            <label><input type="checkbox" id="mp3-check"> Convert to MP3</label>
-            <label for="format-select">Choose Format:</label>
-            <select id="format-select">
-            <option value="auto">Auto (Best)</option>
-             </select>
-
-        </div>
-
-        <button id="download-btn">Download</button>
-
-        <div class="progress-container">
-            <div id="progress-bar"></div>
-            <span id="progress-text">Idle</span>
-        </div>
-
-        <button id="history-btn">Download History</button>
-
-        <div id="history-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Download History</h2>
-                <ul id="history-list"></ul>
-            </div>
-        </div>
-    </main>
-
-    <script src="/static/script.js"></script>
+<body>
+    <div class="container">
+        <h1>Subhra Downloader Pro</h1>
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter video URL" required>
+            <button type="submit">Download</button>
+        </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
 </body>
 </html>
