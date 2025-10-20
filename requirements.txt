@@ -1,5 +1,5 @@
 Flask==2.3.2
-yt-dlp==2025.10.20
+yt-dlp==2025.10.22
 pywebview==4.4
 requests==2.31.0
 Pillow==10.0.0
