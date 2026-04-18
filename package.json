@@ -1,0 +1,30 @@
+{
+  "name": "biology-sekho-live-widget",
+  "version": "1.0.0",
+  "private": true,
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:renderer\" \"npm:dev:electron\"",
+    "dev:renderer": "vite --config renderer/vite.config.js",
+    "dev:electron": "wait-on tcp:5173 && electron .",
+    "build": "npm run build:renderer",
+    "build:renderer": "vite build --config renderer/vite.config.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "framer-motion": "^11.15.0",
+    "googleapis": "^144.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vite": "^6.0.5",
+    "wait-on": "^8.0.1"
+  }
+}
